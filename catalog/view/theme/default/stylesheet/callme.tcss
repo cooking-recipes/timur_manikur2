@@ -1,0 +1,30 @@
+
+<?php if (isset($button_status)) { ?>
+
+#callme_button > a { 
+position: fixed ;
+right: 0px;
+top: 150px;
+width: 22px;
+z-index: 999;
+cursor: pointer;
+height: 200px;
+padding: 0px;
+}
+
+#callme_button > a.callme {width: 22px; height: 199px;}
+
+#callme_button > a {background: url("<?php echo $server; ?>catalog/view/theme/default/image/callme/callme_button_<?php echo $callme_setting['button_color'] ?>.png") 0px 0px transparent;}
+#callme_button >a:hover {background: url("<?php echo $server; ?>catalog/view/theme/default/image/callme/callme_button_<?php echo $callme_setting['button_color'] ?>.png") 22px 0px transparent; }
+
+html {-ms-overflow-style:scrollbar;}
+
+<?php } ?>
+
+
+
+
+#callme_modal .modal-dialog {width:340px;}
+#callme_modal .modal-body {padding:0;}
+#callme_modal .modal-content {border:none; background:none;}
+#callme_modal iframe {border-radius:6px; background:#ddd;}

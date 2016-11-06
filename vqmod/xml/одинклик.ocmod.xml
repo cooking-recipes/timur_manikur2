@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+    <name>Buy One Click Modification</name>
+    <code>buyoneclick</code>
+    <version>1.0.1</version>
+    <author>Biryukow</author>
+    <link>http://cooking-recipes.github.io/</link>
+
+    <!-- Product modification ================================================================== -->
+    <file path="catalog/view/theme/theme509/template/product/product.tpl">
+        <operation>
+            <search>
+                <![CDATA[<button type="button" id="button-cart" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-add"><?php echo $button_cart; ?></button>]]>
+            </search>
+            <add position="before"><![CDATA[
+							<!-- Button buyoneclick -->
+							<?php  echo $buyoneclick;?>
+							<!-- END :  button buyoneclick -->
+			]]>
+            </add>
+        </operation>
+    </file>
+
+    <!-- Adding the fastorder product controller -->
+    <file path="catalog/controller/product/product.php">
+        <operation>
+            <search><![CDATA[
+           $this->model_catalog_product->updateViewed($this->request->get['product_id']);
+				]]></search>
+            <add position="after"><![CDATA[
+                $data['buyoneclick'] = $this->load->controller('product/buyoneclick', ['price'=>$data['price'],'product_name'=>$data['heading_title'], 'product_id'=>$data['product_id'],'thumb'=>$data['thumb']]); // BuyOneClick button
+		]]></add>
+        </operation>
+    </file>
+
+    <file path="catalog/view/theme/theme509/template/common/footer.tpl">
+        <operation>
+            <search><![CDATA[</footer>]]>
+            </search>
+            <add position="after">
+                <![CDATA[
+	<script>
+    
+    //$("#input-telephone").inputmask("7(999)999-99-99");
+
+    $(document).ready(function () {
+
+        $('#button-oneclick').on('click', function () {
+
+            
+console.log('ook-');
+
+
+
+$('#myModal3').modal('show');
+
+         if (event.preventDefault) {
+event.preventDefault();
+} else {
+event.returnValue = false;
+}
+event.stopImmediatePropagation();
+event.preventDefault();
+return false;
+//      stop
+
+
+
+
+
+            $('.alert, .text-danger').remove();
+
+            var tel_number = $("#input-telephone").val();
+            var product_id = $('input[name="product_id"]').val();
+            var quantity = $("#input-quantity").val();
+              console.log(tel_number);
+              console.log(product_id);
+            var pattern = /^\+[1-9]{1}[0-9]{3,14}$/;
+            var pattern = new RegExp('^[0-9]+$');
+               
+            if (pattern.test(tel_number)) {
+                $.ajax({
+                    url: 'index.php?route=product/buyoneclick/oneclickadd',
+                    type: 'post',
+                    data: 'product_id=' + product_id + '&tel_number=' + tel_number+'&quantity='+quantity,
+                    dataType: 'json',
+                    complete: function () {
+                        $('#cart > button').button('reset');
+                    },
+                    success: function (json) {
+                        if (json['redirect']) {
+                            location = json['redirect'];
+                        }
+
+                        if (json['success']) {
+                           $('.form-one-click-call').html('<label class="control-label" for="input-telephone">' + json['text_order_success'] + ' ' + json['code'] + '</label>');
+                        }
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        //console.log(xhr.status);
+                        //console.log(thrownError);
+                        $('#content').parent().before('<div class="alert alert-danger"><i class="fa fa-minus-circle"></i>'+ xhr.responseText +' <button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+					}
+                });
+            }
+            else {
+                $('#content').parent().before('<div class="alert alert-danger"><i class="fa fa-minus-circle"></i> Телефонный номер неверен. Он должен состаять из цифр.<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+            }
+        });
+
+    });
+
+
+// первое модальное
+function b_o_click(a,im) {
+
+// clear cquntiti
+
+$.fancybox.close();
+console.log("fan close");
+
+$('#input-quantity3').val(1);  
+$('#myModal3').modal('show');    
+
+$('#prodim').attr('src',im); 
+
+$('#input-id3').val(a); 
+console.log('ook-a im');
+
+}
+
+
+//    для отправки товара oneclick
+ $( "#form-callback3" ).submit(function( event ) {
+
+
+  console.log('fb2');
+
+
+ $('.alert, .text-danger').remove();
+
+            var tel_number = $("#input-telephone3").val();
+            var  quantity=$("#input-quantity3").val();
+            var product_id=$("#input-id3").val();
+                console.log(tel_number);
+                console.log(quantity);
+                console.log(product_id);
+                $.ajax({
+                 url: 'index.php?route=product/buyoneclick/oneclickadd',
+                    type: 'post',
+        data: 'product_id=' + product_id + '&tel_number=' + tel_number+'&quantity='+ quantity,
+                    dataType: 'json',
+                    complete: function () {
+                        $('#cart > button').button('reset');
+                    },
+                    success: function (json) {
+                        if (json['redirect']) {
+                            location = json['redirect'];
+                        }
+
+                        if (json['success']) {
+
+                             console.log('sdsds');
+
+                          $('#myModal3').modal('hide');
+                          $('#myModal2').modal('show');
+                          $('#myModal2_text').text('');
+                          $("#input-quantity3").val(1);
+                           $('#myModal2_text').text('Номер вашего заказа: '+json['code']);
+
+                     <!--  setTimeout(function(){ $('#myModal2').modal('hide');}, 3000); -->
+
+                         /*  $('.form-one-click-call').html('<label class="control-label" for="input-telephone">' + json['text_order_success'] + ' ' + json['code'] + '</label>');*/
+                        }
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        //console.log(xhr.status);
+                        //console.log(thrownError);
+                        $('#content').parent().before('<div class="alert alert-danger"><i class="fa fa-minus-circle"></i>'+ xhr.responseText +' <button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+                    }
+                });
+            
+   if (event.preventDefault) {
+event.preventDefault();
+} else {
+event.returnValue = false;
+}
+event.stopImmediatePropagation();
+event.preventDefault();
+  return false;
+
+ 
+
+
+ 
+});
+
+
+
+
+
+
+
+
+
+</script>
+]]>
+            </add>
+        </operation>
+    </file>
+</modification>

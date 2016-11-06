@@ -1,0 +1,784 @@
+.new_button_container_manual_setting {
+    background: #09f;
+    border-radius: 50%;
+    bottom: 10%;
+    cursor: move;
+    height: 50px;
+    position: fixed;
+    right: 60px;
+    width: 50px;
+    z-index: 9999;
+}
+.new_button_container_manual_setting .link3::before {
+    background: rgba(0, 0, 0, 0) url("../image/logo_drag_btn.png") no-repeat scroll center center / 35px auto;
+    content: "";
+    height: 50px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 50px;
+    z-index: 11;
+}
+@keyframes pulse {
+0% {
+    opacity: 0.8;
+    transform: rotate(0deg) scale(0.46) skew(1deg);
+}
+10% {
+    transform: rotate(0deg) scale(0.56) skew(1deg);
+}
+100% {
+    opacity: 0.01;
+    transform: rotate(0deg) scale(1) skew(1deg);
+}
+}
+@-webkit-keyframes pulse {
+  0% {
+    opacity: 0.8;
+    transform: rotate(0deg) scale(0.46) skew(1deg);
+}
+10% {
+    transform: rotate(0deg) scale(0.56) skew(1deg);
+}
+100% {
+    opacity: 0.01;
+    transform: rotate(0deg) scale(1) skew(1deg);
+}
+}
+@-moz-keyframes pulse {
+  0% {
+    opacity: 0.8;
+    transform: rotate(0deg) scale(0.46) skew(1deg);
+}
+10% {
+    transform: rotate(0deg) scale(0.56) skew(1deg);
+}
+100% {
+    opacity: 0.01;
+    transform: rotate(0deg) scale(1) skew(1deg);
+}
+}
+
+.new_button_container_manual_setting .pulse_holder3 {
+    height: 50px;
+    position: absolute;
+    width: 50px;
+	cursor:pointer;
+}
+.new_button_container_manual_setting .pulse_rays3 {
+	 -webkit-animation: pulse 3s linear 0s infinite;
+       -moz-animation: pulse 3s linear 0s infinite;
+            animation: pulse 3s linear 0s infinite;
+    background-color: transparent;
+    border: 2px solid #09f ;
+    border-radius: 100%;
+    bottom: -25px;
+    box-sizing: border-box;
+    height: 100px;
+    opacity: 0.01;
+    position: absolute;
+    right: -25px;
+    width: 100px;
+}
+.new_button_container_manual_setting .pulse_rays13 {
+   -webkit-animation: pulse 1.5s linear 0s infinite;
+       -moz-animation: pulse 1.5s linear 0s infinite;
+            animation: pulse 1.5s linear 0s infinite;
+    background-color: transparent;
+    border: 2px solid #09f ;
+    border-radius: 100%;
+    bottom: -25px;
+    box-sizing: border-box;
+    height: 100px;
+    opacity: 0.01;
+    position: absolute;
+    right: -25px;
+    width: 100px;
+}
+@keyframes tada {
+0% {
+    transform: scale3d(1, 1, 1);
+}
+10%, 20% {
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+}
+30%, 50%, 70%, 90% {
+    transform: scale3d(1.05, 1.05, 1.05) rotate3d(0, 0, 1, 3deg);
+}
+40%, 60%, 80% {
+    transform: scale3d(1.05, 1.05, 1.05) rotate3d(0, 0, 1, -3deg);
+}
+100% {
+    transform: scale3d(1, 1, 1);
+}
+}
+@-moz-keyframes tada {
+0% {
+    transform: scale3d(1, 1, 1);
+}
+10%, 20% {
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+}
+30%, 50%, 70%, 90% {
+    transform: scale3d(1.05, 1.05, 1.05) rotate3d(0, 0, 1, 3deg);
+}
+40%, 60%, 80% {
+    transform: scale3d(1.05, 1.05, 1.05) rotate3d(0, 0, 1, -3deg);
+}
+100% {
+    transform: scale3d(1, 1, 1);
+}
+}
+@-webkit-keyframes tada {
+0% {
+    transform: scale3d(1, 1, 1);
+}
+10%, 20% {
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+}
+30%, 50%, 70%, 90% {
+    transform: scale3d(1.05, 1.05, 1.05) rotate3d(0, 0, 1, 3deg);
+}
+40%, 60%, 80% {
+    transform: scale3d(1.05, 1.05, 1.05) rotate3d(0, 0, 1, -3deg);
+}
+100% {
+    transform: scale3d(1, 1, 1);
+}
+}
+
+
+@keyframes tada {
+0% {
+    transform: scale3d(1, 1, 1);
+}
+10%, 20% {
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+}
+30%, 50%, 70%, 90% {
+    transform: scale3d(1.05, 1.05, 1.05) rotate3d(0, 0, 1, 3deg);
+}
+40%, 60%, 80% {
+    transform: scale3d(1.05, 1.05, 1.05) rotate3d(0, 0, 1, -3deg);
+}
+100% {
+    transform: scale3d(1, 1, 1);
+}
+}
+.new_button_container_manual_setting:hover {
+    animation: 1.5s linear 0s normal none infinite running tada;
+   -webkit-animation: 1.5s linear 0s normal none infinite running tada;
+    -moz-animation: 1.5s linear 0s normal none infinite running tada;
+}
+.new_button_container_manual_setting:hover .pulse_rays13, .new_button_container3:hover .pulse_rays3 {
+    background-color: #09f;
+    border-color: #09f;
+}
+/*--------------------*/
+.new_button_container2 {
+    background: #09f;
+    border-radius: 50%;
+    bottom: 10%;
+    cursor: move;
+    height: 50px;
+    position: fixed;
+    right: 60px;
+    width: 50px;
+    z-index: 9999;
+	cursor:pointer;
+}
+.new_button_container2 .link2::before {
+    background: rgba(0, 0, 0, 0) url("../image/logo_drag_btn.png") no-repeat scroll center center / 35px auto;
+    content: "";
+    height: 50px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 50px;
+    z-index: 11;
+}
+@keyframes pulse {
+0% {
+    opacity: 0.8;
+    transform: rotate(0deg) scale(0.46) skew(1deg);
+}
+10% {
+    transform: rotate(0deg) scale(0.56) skew(1deg);
+}
+100% {
+    opacity: 0.01;
+    transform: rotate(0deg) scale(1) skew(1deg);
+}
+}
+@-webkit-keyframes pulse {
+  0% {
+    opacity: 0.8;
+    transform: rotate(0deg) scale(0.46) skew(1deg);
+}
+10% {
+    transform: rotate(0deg) scale(0.56) skew(1deg);
+}
+100% {
+    opacity: 0.01;
+    transform: rotate(0deg) scale(1) skew(1deg);
+}
+}
+@-moz-keyframes pulse {
+  0% {
+    opacity: 0.8;
+    transform: rotate(0deg) scale(0.46) skew(1deg);
+}
+10% {
+    transform: rotate(0deg) scale(0.56) skew(1deg);
+}
+100% {
+    opacity: 0.01;
+    transform: rotate(0deg) scale(1) skew(1deg);
+}
+}
+.new_button_container2 .pulse_holder2 {
+    height: 50px;
+    position: absolute;
+    width: 50px;
+}
+.new_button_container2 .pulse_rays2 {
+   -webkit-animation: pulse 3s linear 0s infinite;
+       -moz-animation: pulse 3s linear 0s infinite;
+            animation: pulse 3s linear 0s infinite;
+    background-color: transparent;
+    border: 2px solid #09f ;
+    border-radius: 100%;
+    bottom: -25px;
+    box-sizing: border-box;
+    height: 100px;
+    opacity: 0.01;
+    position: absolute;
+    right: -25px;
+    width: 100px;
+}
+.new_button_container2 .pulse_rays12 {
+   -webkit-animation: pulse 1.5s linear 0s infinite;
+       -moz-animation: pulse 1.5s linear 0s infinite;
+            animation: pulse 1.5s linear 0s infinite;
+    background-color: transparent;
+    border: 2px solid #09f ;
+    border-radius: 100%;
+    bottom: -25px;
+    box-sizing: border-box;
+    height: 100px;
+    opacity: 0.01;
+    position: absolute;
+    right: -25px;
+    width: 100px;
+}
+@keyframes tada {
+0% {
+    transform: scale3d(1, 1, 1);
+}
+10%, 20% {
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+}
+30%, 50%, 70%, 90% {
+    transform: scale3d(1.05, 1.05, 1.05) rotate3d(0, 0, 1, 3deg);
+}
+40%, 60%, 80% {
+    transform: scale3d(1.05, 1.05, 1.05) rotate3d(0, 0, 1, -3deg);
+}
+100% {
+    transform: scale3d(1, 1, 1);
+}
+}
+@keyframes tada {
+0% {
+    transform: scale3d(1, 1, 1);
+}
+10%, 20% {
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+}
+30%, 50%, 70%, 90% {
+    transform: scale3d(1.05, 1.05, 1.05) rotate3d(0, 0, 1, 3deg);
+}
+40%, 60%, 80% {
+    transform: scale3d(1.05, 1.05, 1.05) rotate3d(0, 0, 1, -3deg);
+}
+100% {
+    transform: scale3d(1, 1, 1);
+}
+}
+.new_button_container2:hover {
+    animation: 1.5s linear 0s normal none infinite running tada;
+}
+.new_button_container2:hover .pulse_rays12, .new_button_container2:hover .pulse_rays2 {
+    background-color: #09f;
+    border-color: #09f;
+}
+/*--------------------------*/
+.new_button_container1 {
+    background: #09f;
+    border-radius: 50%;
+    bottom: 10%;
+    cursor: move;
+    height: 50px;
+    position: fixed;
+    left: 60px;
+    width: 50px;
+    z-index: 9999;
+	cursor:pointer;
+}
+.new_button_container1 .link1::before {
+    background: rgba(0, 0, 0, 0) url("../image/logo_drag_btn.png") no-repeat scroll center center / 35px auto;
+    content: "";
+    height: 50px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 50px;
+    z-index: 11;
+}
+@keyframes pulse {
+0% {
+    opacity: 0.8;
+    transform: rotate(0deg) scale(0.46) skew(1deg);
+}
+10% {
+    transform: rotate(0deg) scale(0.56) skew(1deg);
+}
+100% {
+    opacity: 0.01;
+    transform: rotate(0deg) scale(1) skew(1deg);
+}
+}
+@-webkit-keyframes pulse {
+  0% {
+    opacity: 0.8;
+    transform: rotate(0deg) scale(0.46) skew(1deg);
+}
+10% {
+    transform: rotate(0deg) scale(0.56) skew(1deg);
+}
+100% {
+    opacity: 0.01;
+    transform: rotate(0deg) scale(1) skew(1deg);
+}
+}
+@-moz-keyframes pulse {
+  0% {
+    opacity: 0.8;
+    transform: rotate(0deg) scale(0.46) skew(1deg);
+}
+10% {
+    transform: rotate(0deg) scale(0.56) skew(1deg);
+}
+100% {
+    opacity: 0.01;
+    transform: rotate(0deg) scale(1) skew(1deg);
+}
+}
+.new_button_container1 .pulse_holder1 {
+    height: 50px;
+    position: absolute;
+    width: 50px;
+}
+.new_button_container1 .pulse_rays1 {
+    -webkit-animation: pulse 3s linear 0s infinite;
+       -moz-animation: pulse 3s linear 0s infinite;
+            animation: pulse 3s linear 0s infinite;
+    background-color: transparent;
+    border: 2px solid #09f ;
+    border-radius: 100%;
+    bottom: -25px;
+    box-sizing: border-box;
+    height: 100px;
+    opacity: 0.01;
+    position: absolute;
+    right: -25px;
+    width: 100px;
+}
+.new_button_container1 .pulse_rays11 {
+    -webkit-animation: pulse 1.5s linear 0s infinite;
+       -moz-animation: pulse 1.5s linear 0s infinite;
+            animation: pulse 1.5s linear 0s infinite;
+    background-color: transparent;
+    border: 2px solid #09f ;
+    border-radius: 100%;
+    bottom: -25px;
+    box-sizing: border-box;
+    height: 100px;
+    opacity: 0.01;
+    position: absolute;
+    right: -25px;
+    width: 100px;
+}
+@keyframes tada {
+0% {
+    transform: scale3d(1, 1, 1);
+}
+10%, 20% {
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+}
+30%, 50%, 70%, 90% {
+    transform: scale3d(1.05, 1.05, 1.05) rotate3d(0, 0, 1, 3deg);
+}
+40%, 60%, 80% {
+    transform: scale3d(1.05, 1.05, 1.05) rotate3d(0, 0, 1, -3deg);
+}
+100% {
+    transform: scale3d(1, 1, 1);
+}
+}
+@keyframes tada {
+0% {
+    transform: scale3d(1, 1, 1);
+}
+10%, 20% {
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+}
+30%, 50%, 70%, 90% {
+    transform: scale3d(1.05, 1.05, 1.05) rotate3d(0, 0, 1, 3deg);
+}
+40%, 60%, 80% {
+    transform: scale3d(1.05, 1.05, 1.05) rotate3d(0, 0, 1, -3deg);
+}
+100% {
+    transform: scale3d(1, 1, 1);
+}
+}
+.new_button_container1:hover {
+    animation: 1.5s linear 0s normal none infinite running tada;
+}
+.new_button_container1:hover .pulse_rays11, .new_button_container1:hover .pulse_rays1 {
+    background-color: #09f;
+    border-color: #09f;
+}
+
+/*-----------------------------------------------------------------------------------*/
+
+.topic_callback {
+	background: url("../image/arrow-down.png") no-repeat scroll right 10px center #fff;
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	-khtml-border-radius:4px;
+	border-radius:4px;
+	height: 26px;
+	overflow: hidden;
+	width: 248px;
+	border:1px solid #d5d5d5;
+     margin-left: 5px;
+}
+.topic_callback select {
+	background: none repeat scroll 0 0 transparent;
+	border: 0 none;
+	font-size: 13px;
+	height: 26px;
+	line-height: 1;
+	padding: 5px;
+	width: 270px !important;
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	-khtml-border-radius:4px;
+	border-radius:4px;
+}
+.topic_callback:hover {
+	background: url("../image/arrow-down.png") no-repeat scroll right 10px center #fff;
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	-khtml-border-radius:4px;
+	border-radius:4px;
+	height: 26px;
+	overflow: hidden;
+	width: 248px !important;
+	border:1px solid #67ca67
+}
+#callback {
+	background:#09f;
+    border: 1px solid #555555;
+    border-radius: 9px 9px 9px 9px;
+    box-shadow: 0 0 7px #000000;
+    cursor: pointer;
+    height: 160px;
+    margin-right: -60px;
+    margin-top: -90px;
+    position: fixed;
+    right: 0;
+    top: 50%;
+    width: 93px;
+    z-index: 100;
+}
+form {
+  display: inline;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+#callback:hover {
+	background: #0165cb;
+}
+.contact-content input {
+	margin-bottom:0px !important;
+}
+
+.contact-input {
+	width: 90%;
+	height: 25px;
+	text-align:center;
+	padding:3px;
+	margin-left:0px;
+	margin-right:0px;
+}
+.date_time_callback input.date_callback {
+	width: 100px ;
+	height: 25px !important;
+	border:1px solid #d5d5d5 !important;
+	padding:3px !important;
+}
+.date_time_callback input.time_callback {
+	height: 25px !important;
+	border:1px solid #d5d5d5 !important;
+	padding:3px !important;
+}
+.content-left-100 .date_time_callback input.time_callback {
+	height: 25px !important;
+	border:1px solid #d5d5d5 !important;
+	padding:3px !important;
+}
+.content-left-50  input.contact-input, .content-left-100  input.contact-input {
+	border:1px solid #d5d5d5 !important;
+	width: 244px !important;
+	height: 25px !important;
+	text-align:center !important;
+	padding:3px !important;
+	margin-left:0px !important;
+	margin-right:0px !important;
+}
+.content-left-50  textarea , .content-left-100  textarea {
+	border:1px solid #d5d5d5 !important;
+	padding:3px !important;
+	margin-left:0px !important;
+	margin-right:0px !important;
+}
+.content-left-50  input:hover, .content-left-50  textarea:hover, .content-left-100  input:hover, .content-left-100  textarea:hover {
+	border:1px solid #67CA67 !important;
+}
+.content-left-50  input:focus, .content-left-50  textarea:focus, .content-left-100  input:focus, .content-left-100  textarea:focus {
+	border:1px solid #67CA67 !important;
+}
+.contact-textarea {
+	width: 244px !important;
+	height: 45px;
+	text-align:center;
+}
+.contact-data > div {
+  margin-bottom: 7px;
+}
+.contact-data textarea{
+	resize:none;
+}
+.contact-content {
+	text-align:center;
+	overflow:auto;
+	background:#fff;
+}
+.contact-data {
+	margin-bottom:10px;
+	height:100%;
+}
+.contact-success {
+	margin-bottom:5px;
+	height:41px;
+	clear:both;
+}
+.success_callback {
+	border:1px solid #67CA67;
+	background:#C6F4C6;
+	border-radius:5px;
+	color:#000;
+	line-height:41px;
+	font-size:14px;
+	z-index:99999;
+	position:absolute;
+	left:0px;
+	right:0px;
+	bottom:3px;
+}
+.contact-right {
+  float: right;
+  width: 270px;
+
+}
+.content-right {
+	background: none repeat scroll 0 0 #f8f8f8;
+	border: medium none #c9c9c9;
+	height: auto;
+	margin: 25px 15px 15px;
+	text-align: left;
+	border: 1px solid #d5d5d5;
+	overflow:hidden;
+}
+.content-right > div {
+	padding:5px 5px 5px 20px;
+}
+.content-left-50 {
+  float: left;
+  width: 270px;
+  height:100%;	
+
+}
+.content-left-100 {
+  float: left;
+  height:100%;	
+}
+.contact-title {
+	font-weight:bold;
+	font-size:16px;
+}
+.contact-content  button.contact-send {
+	background: #09f;
+	border-radius: 3px;
+	border:none;
+	color: #fff;
+	display: inline-block;
+	font-size: 16px;
+	height: 38px;
+	line-height: 30px;
+	margin: 0;
+	padding: 3px 5px;
+	text-align: center;
+	cursor:pointer;
+}
+.contact-content  button.contact-send:hover {
+	background: #0165cb;
+	border:#none;
+	color: #fff;
+	cursor:pointer;
+}
+.fa.fa-phone-square {
+vertical-align: middle;
+}
+.verticalalign {
+	vertical-align: middle;
+}
+.button-send {
+  left: 0px;
+  margin-bottom: 5px;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+.skype img {
+  vertical-align: sub;
+}
+
+/*Header link CSS*/
+.callback-view-top {
+	border-radius: 9px;
+	box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.35);
+	color: #000;
+	left: 41%;
+	padding: 3px 7px;
+	position: absolute;
+	top: 34px;	
+	background:#09f;
+	cursor:pointer;
+}
+.callback-view-top a{
+	color:#fff;	
+	font-size:14px;
+	text-decoration:none;
+}
+.callback-view-bottom-fixed {
+	border-radius: 5px 5px 0px 0px;
+	box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.35);
+	color: #000;
+	padding: 3px 7px;
+	position: fixed;
+    left: 50%;
+    bottom: 0px;
+    transform: translate(-50%, -0%);
+	margin:0 auto;	
+	background:#09f;
+	z-index:999;
+	cursor:pointer;
+}
+.callback-view-bottom-fixed a{
+	color:#fff;	
+	font-size:14px;
+	text-decoration:none;
+}
+/*END link Header CSS*/
+
+
+.callback-icon-right i {
+	margin-left:5px;
+}
+.callback-icon-right {
+	background:#09f;
+    border: 1px solid #555555;
+    border-radius: 9px 0px 0px 9px;
+    box-shadow: 0 0 7px #000000;
+    cursor: pointer;
+    position: fixed;
+    right: 0;
+    top: 50%;
+    width: auto;
+    z-index: 100;
+	padding:5px;
+}
+.callback-icon-right:hover {
+	background: #0165cb;
+}
+.callback-icon-left i {
+	margin-left:5px;
+}
+.callback-icon-left {
+	background:#09f;
+    border: 1px solid #555555;
+    border-radius: 0px 9px 9px 0px;
+    box-shadow: 0 0 7px #000000;
+    cursor: pointer;
+    position: fixed;
+    left: 0;
+    top: 50%;
+    width: auto;
+    z-index: 100;
+	padding:5px;
+}
+.callback-icon-left:hover {
+	background: #0165cb;
+}
+.social_icon {
+	display:inline-block;
+	padding: 0 5px 4px 0 !important;
+}
+.error_callback {
+	color:red;
+	display:inline-block;
+}
+.img-phone-contact {
+  float: left;
+  max-width: 257px;
+}
+.image_left {
+	width:257px;
+	float:left;
+	margin-top:25px;
+}
+
+@media screen and (min-width: 240px) and (max-width: 1023px){
+.img-phone-contact {
+	display:none;
+}
+.contact-right {
+	display:none;
+}
+.content-left-50 {
+  float: left;
+  width: auto !important;
+  height:100%;	
+}
+.content-left-50 .date_time_callback input.time_callback {
+  width: 61px ;
+}
+.content-left-100 .date_time_callback input.time_callback {
+  width: 69px;
+}
+
+}
